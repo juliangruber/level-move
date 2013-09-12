@@ -1,0 +1,31 @@
+{
+  "name": "level-move",
+  "description": "Move a value to another key.",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/juliangruber/level-move.git"
+  },
+  "homepage": "https://github.com/juliangruber/level-move",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "tape": "~1.1.0",
+    "level": "~0.16.0"
+  },
+  "keywords": [
+    "level",
+    "key",
+    "value",
+    "move"
+  ],
+  "author": {
+    "name": "Julian Gruber",
+    "email": "mail@juliangruber.com",
+    "url": "http://juliangruber.com"
+  },
+  "license": "MIT"
+}
