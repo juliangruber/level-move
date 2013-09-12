@@ -7,7 +7,7 @@ Move a value to another key, inside a LevelDB.
 
 ```js
 var level = require('level');
-var move = require('./');
+var move = require('level-move');
 
 var db = level(__dirname + '/db');
 move.install(db);
