@@ -1,7 +1,7 @@
 
 # level-move
 
-Move a value to another key, inside a LevelDB.
+Move a value to another key, inside a LevelDB. Uses [level-lock](https://www.npmjs.com/package/level-lock) to prevent concurrent operations from causing race conditions.
 
 ## Example
 
@@ -14,6 +14,10 @@ move.install(db);
 
 db.put('foo', 'bar', function(err) {
   db.move('foo', 'yolo', function(err) {
+    if (err && err.code === 'LOCKED') {
+      console.error('conflict');
+    }
+    
     db.get('yolo', function(err, value) {
       console.log('yolo: %s', value);
       // => yolo: bar
@@ -26,7 +30,7 @@ db.put('foo', 'bar', function(err) {
 
 ### move(db, from, to, cb)
 
-Move the value stored under `from` to `to` and call `cb` when done.
+Move the value stored under `from` to `to` and call `cb` when done. If the key is locked by a concurrent operation the error passed to `cb` will have `err.code` equal `'LOCKED'`.
 
 ### move.install(db)
 ### db.move(from, to, cb)
