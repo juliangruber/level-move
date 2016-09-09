@@ -11,10 +11,12 @@
   "scripts": {
     "test": "tape test.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "level-lock": "^1.0.1"
+  },
   "devDependencies": {
-    "tape": "~1.1.0",
-    "level": "~0.16.0"
+    "level": "^1.4.0",
+    "tape": "^4.6.0"
   },
   "keywords": [
     "level",

@@ -3,7 +3,7 @@ var level = require('level');
 var move = require('./');
 
 test('move', function(t) {
-  t.plan(4);
+  t.plan(5);
 
   var db = level(__dirname + '/db');
   move.install(db);
@@ -19,6 +19,10 @@ test('move', function(t) {
         t.equal(value, 'bar');
       });
     });
+    
+    db.move('foo', 'yoyo', function(err) {
+      t.equal(err.code, 'LOCKED');
+    });
+    
   });
 });
-
