@@ -1,7 +1,7 @@
 {
   "name": "level-move",
   "description": "Move a value to another key.",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/juliangruber/level-move.git"
